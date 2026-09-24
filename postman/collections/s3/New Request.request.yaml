@@ -1,0 +1,11 @@
+$kind: http-request
+url: http://localhost:5000/presigned-url
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "filename": "test.txt",
+        "contentType": "text/plain"
+    }
+order: 1790249538883

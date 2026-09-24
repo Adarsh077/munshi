@@ -1,0 +1,3 @@
+{
+  "extends": "@munshi/typescript-config/base.json",
+}
