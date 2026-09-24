@@ -1,7 +1,8 @@
 import axios from "axios"
+import config from "./config.js"
 
 const send = async (r2Path: string) => {
-  await axios.post(`${process.env.API_BASE_URL}/process`, {
+  await axios.post(`${config.api}/process`, {
     r2Path,
   })
 }

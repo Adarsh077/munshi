@@ -3,10 +3,10 @@ import { execFile as execFileSync } from "node:child_process"
 import { promisify } from "node:util"
 import path from "node:path"
 import { DateTime } from "luxon"
-
+import config from "./config.js"
 import { File } from "../enum.js"
 
-const PATH = "/home/adarshs/Videos/obs"
+const PATH = config.dir || "/home/adarshs/Videos/obs"
 const execFile = promisify(execFileSync)
 
 type ProbeResult = {

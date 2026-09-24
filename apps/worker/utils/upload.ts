@@ -1,15 +1,13 @@
 import axios from "axios"
 import { File } from "../enum.js"
+import config from "./config.js"
 
 const upload = async (file: File): Promise<string | null> => {
   try {
-    const signedUrl = await axios.post(
-      `${process.env.API_BASE_URL}/presigned-url`,
-      {
-        filename: file.name,
-        contentType: Bun.file(file.path).type,
-      }
-    )
+    const signedUrl = await axios.post(`${config.api}/presigned-url`, {
+      filename: file.name,
+      contentType: Bun.file(file.path).type,
+    })
     if (signedUrl.data?.body?.url) {
       const f = Bun.file(file.path)
 
